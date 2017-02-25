@@ -1,0 +1,348 @@
+<html>
+<body>
+<meta http-equiv="expires" content="Mon, 26 Jul 1997 05:00:00 GMT"/>
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<style>
+  .multiselect {
+  width: 200px;
+}
+.selectBox {
+  position: relative;
+}
+.selectBox select {
+  width: 180px;
+  font-weight: bold;
+}
+.overSelect {
+  //background-color: yellow;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#checkboxes {
+  width: 180px;
+  display: none;
+  border: 1px #dadada solid;
+  text-align :left
+}
+.sachin {
+  display: block;
+}
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+#board ,#field, #Class1{
+  width: 180px;
+ } 
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<div class="Container">
+<center><h1>Student Login Form</h1></center> 
+<center>	
+	<form action="register.jsp" id="register"  name ="myForm" onsubmit="return validateForm();" method="post">
+<table border="0">
+<tbody>
+
+<tr>
+<td><label for=" fname">First Name*: </label> </td>
+<td><input id="fname" maxlength="45" name="fname" type="text" /> </td>
+</tr>
+<tr>
+<td><label for=lname">Last Name*: </label> </td>
+<td><input id="lname" maxlength="45" name="lname" type="text" /> </td>
+</tr>
+
+<tr>
+<td><label for="email">Email Address*:</label> </td>
+<td><input id="email" maxlength="45" name="email" type="email" /><lable> &nbsp;&nbsp; (&nbsp; eg: &nbsp; abcd@gmail.com &nbsp; )</lable></td>
+</tr>
+
+<tr>
+<td><label for="mobNo">Mobile Number*:</label> </td>
+<td><input id="mobNo" maxlength="10" name="mobNo" type="number" /><lable> &nbsp;&nbsp; (&nbsp; max 10 digit &nbsp; )</lable></td>
+</tr>
+
+<tr>
+<td><label for="DOB">Date OF Birth*:</label></td>
+<td><input id="DOB" maxlength="45" name="DOB" type="date" /></td>
+</tr>
+
+<tr>
+<td><label for="gender">Gender*:</label></td>
+<td><input id="gender"  name="gender" type="radio" value="male"/>Male &nbsp; &nbsp;<input id="gender"  name="gender" type="radio" value="female"/> Female</td>
+</tr>
+
+<tr>
+<td><label for="STD">Studing In :</label></td>
+<td><input id="STD" maxlength="45" name="STD" type="text" /></td>
+</tr>
+
+
+<tr>
+<td><label for="school">School :</label></td>
+<td><input id="school" maxlength="45" name="school" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="extra">Extracericular :</label></td>
+<td><input id="extra" maxlength="45" name="extra" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="percent">Recent Percent :</label></td>
+<td><input id="percent" maxlength="45" name="percent" type="text" /> &nbsp;%</td>
+</tr>
+
+<tr>
+<td><label for="fname">Adhar*: </label> </td>
+<td><input id="fname" maxlength="45" name="fname" type="text" /> </td>
+</tr>
+
+<tr>
+<td><label for="address">Address*:</label> </td>
+<td><input name="content" type="text"></td>
+</tr>
+
+<tr>
+<td><label for="STD" >Board :</label></td>
+<td><select id="Board"> <option value="not1">Select an option</option></select></td>
+</tr>
+<tr>
+<td><label for="STD">Stream :</label></td>
+<td><select id="field"> <option value="not2">Select an option</option></select></td>
+</tr>
+<tr>
+<td><label for="STD">Class :</label></td>
+<td><select id="Class1"> <option value="not3">Select an option</option></select></td>
+</tr>
+<tr>
+<td><label for="STD">Subjects :</label></td>
+<td>
+<div class="selectBox">
+      <select id="subject">
+        <option>Select an option</option>
+      </select>
+      <div class="overSelect" id="abcd"></div>
+    </div>
+    <div id="checkboxes"></div>
+</td>
+</tr>
+<tr>
+<td><label for="STD">Refernce :</label></td>
+<td><select> <option value="Maharashta_Board">Maharashta Board</option>
+			 <option value="Maharashta_Board">CBSE Board</option>
+			 <option value="Maharashta_Board">CBSE Board</option></select></td>
+</tr>
+
+
+<tr>
+<td align="right"><input name="Submit" type="submit" value="Submit" /></td>
+</tr>
+</tbody></table>
+</Div>
+<Script>
+$(document).ready(function(){
+	//alert("Helllow");
+	var subj = [];
+	var expanded = false;
+    $(".overSelect").click(function(){
+      var board=$("#Board").val();
+      var field=$("#field").val();
+      var class1=$("#Class1").val();
+      if(board=='not1'||field=='not2'||class1=='not3'){
+        alert("Please fill the Board , field and stream first");
+        }else{
+          if($('#checkboxes').html()!=""){
+              //checkboxes.style.display = "block";
+              expanded = false;
+          }else{
+          $.ajax({
+          url : 'Controller/abcd.php?action=subject'+'&board='+board+'&field='+field+'&class1='+class1,
+            success : function(data){
+              var json = JSON.parse(data);
+              //$("#checkboxes").empty();
+              //alert(data);
+              for(var i=0;i<json.length;i++){
+
+                var obj = json[i];
+                subj[i] = obj.subject_name;
+                //alert(obj.subject_name);
+          $('#checkboxes').append('<input type="checkbox" id="'+obj.subject_name+'"/> ' + obj.subject_name + '<br />');
+              }
+            }
+            });
+          } 
+           var checkboxes = document.getElementById("checkboxes");
+           if (!expanded) {
+		      	checkboxes.style.display = "block";
+	       		expanded = true;
+	       	  } else {
+	       		checkboxes.style.display = "none";
+	       		expanded = false;
+	         	}
+         
+        } 
+    });
+	
+	$(".Container").click(function(e){
+		//alert(e.target.id);	
+    var flag1=true;
+		if(e.target.id!='abcd')
+		{	
+      for(var k=0;k<subj.length;k++){
+        if(e.target.id==subj[k]){
+          flag1=false;
+        }
+      }
+
+		if(expanded && flag1){
+		checkboxes.style.display = "none";
+		expanded = false;
+		}
+		}/*else{
+      if(expanded){
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }*/
+	});
+	$("#Board").click(function(){
+        //alert("Helow");
+        var flag=true;
+        document.getElementById('field').options.length = 1;
+        document.getElementById('Class1').options.length = 1;
+        $("#checkboxes").empty();
+        $.ajax({
+        	url : 'dropdowns/getBoards/',
+        	success : function(data){
+            //alert("here I am");
+            var json =JSON.parse(data);
+        		//alert(json[0].Board_Name);
+            for (var k=0 ;k<json.length;k++){
+              var obj=json[k];
+              //alert(obj.Board_Name);
+              var Board = document.getElementById("Board");
+              var  option = document.createElement("option");
+              option.text=obj.Board_Name;
+              option.value=obj.Board_Name;
+              var myOpts = document.getElementById('Board').options;
+                for (var i=0;i<Object.keys(myOpts).length;i++){
+                    if(myOpts[i].value==obj.Board_Name){
+                         //alert("kya hai");
+                         flag=false;
+                     }
+                }
+                if(flag){
+                    Board.add(option);
+                } 
+            }
+          } 
+        });
+    });
+    $("#field").click(function(){
+      //alert($("#Board").val());
+      var flag=true;
+          document.getElementById('Class1').options.length = 1;
+          //document.getElementById('Class1').options.value='not3';
+        //$('#Class1').empty();
+        //var Board = document.getElementById("Class1");
+        //var option = document.createElement("option");
+        //option.text='Select an Option';
+        //option.value='Select an Option';
+        //Board.add(option);
+      $("#checkboxes").empty();
+      var board=$("#Board").val();
+      if(board=='not1'){
+        alert("Please fill the Board 1st");
+      }else{
+        // var tocken= document.getElementById("csrf_field").value;/
+        $.ajax({
+          type : 'post',
+            headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+            
+            url : 'dropdowns/getFields/',
+            data: { "board": board} ,
+            success : function(data){
+               // alert(data);
+               //alert(document.getElementById('Class1').options.length);
+              var json =JSON.parse(data);
+              for(var j=0;j<json.length;j++){
+                  var obj=json[j];
+                  //alert(obj.Field_nm);
+                  var field = document.getElementById("field");
+                  var option = document.createElement("option");
+                  option.text=obj.Field_nm;
+                  option.value=obj.Field_nm;
+
+                  var myOpts = document.getElementById('field').options;
+                  //alert(Object.keys(myOpts).length);
+                  for(var i=0;i<Object.keys(myOpts).length;i++){
+                      if(myOpts[i].value==obj.Field_nm){
+                         //alert("kya hai");
+                         flag=false;
+                      }
+                  }
+                  if(flag==true){
+                    field.add(option);
+                  } 
+              }
+            }
+        });
+      }       
+    });
+    $("#Class1").click(function(){
+        //alert("hot hai!!");
+        $("#checkboxes").empty();
+        var board=$("#Board").val();
+        var field=$("#field").val();
+        //$('#Class1').empty();
+        //var Board = document.getElementById("Class1");
+        //var option = document.createElement("option");
+        //Board.add(option);
+        //option.text='Select an Option';
+        //option.value='Select an Option';
+        if(board=='not1'||field=='not2'){
+        alert("Please fill the Board and field first");
+        }else{
+            $.ajax({
+              url : 'Controller/abcd.php?action=class'+'&board='+board+'&field='+field,
+              success : function(data){
+                //alert(data);
+                //alert(document.getElementById('Class1').options.length)
+                  var json = JSON.parse(data);
+                  for (var k=0 ;k<json.length;k++){
+                    var flag=true;
+                    var obj=json[k];
+                       //alert(obj.Board_Name);
+                     var Board = document.getElementById("Class1");
+                     var option = document.createElement("option");
+                     //alert(obj.Class_Name);
+                    option.text=obj.Class_Name;
+                    option.value=obj.Class_Name;
+
+                    var myOpts = document.getElementById('Class1').options;
+                    for (var i=0;i<Object.keys(myOpts).length;i++){
+                       if(myOpts[i].value==obj.Class_Name){
+                            //alert("kya hai");
+                            flag=false;
+                        }
+                    }
+                    //alert(flag+" "+option.value);
+                    if(flag==true){
+                        Board.add(option);
+                    } 
+                    //alert(document.getElementById('Class1').options.length)
+                 }
+              }
+            });
+        }
+    });
+});
+</script>
+</center>
