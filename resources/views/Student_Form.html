@@ -4,7 +4,6 @@
 <meta http-equiv="pragma" content="no-cache" />
 
 <meta name="csrf-token" content="{{ csrf_token()  }}">
-<meta name="csrf-token" content="{{  csrf_token() }}">
 
 <style>
   .multiselect {
@@ -46,6 +45,8 @@
 	<div class="Container">
 <center><h1>Student Login Form</h1></center> 
 <center>	
+<form><input type="hidden" name="_token" value="{{csrf_field()}}"></form>
+
 	<form action="register.jsp" id="register"  name ="myForm" onsubmit="return validateForm();" method="post">
 <table border="0">
 <tbody>
@@ -148,7 +149,14 @@
 </tbody></table>
 </Div>
 <Script>
+var csrf_token;
 $(document).ready(function(){
+   $.ajax({
+          url : '/getCsrf',
+          success : function(csrf){
+            csrf_token=csrf;
+          } 
+        });
 	//alert("Helllow");
 	var subj = [];
 	var expanded = false;
@@ -266,7 +274,7 @@ $(document).ready(function(){
         $.ajax({
           type : 'post',
             headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        'X-CSRF-TOKEN': csrf_token,
     },
             
             url : 'dropdowns/getFields/',

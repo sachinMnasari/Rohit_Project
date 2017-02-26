@@ -13,10 +13,15 @@
 /*Route::get('/', function () {
     return view('Student_Form');
 });*/
-
+// Route::group(['middleware' => ['web']], function () {
+Route::get('/getCsrf',function(){
+	return csrf_token();
+});
 Route::get('/', function() {
-  Session::set('hi', 'hello') ;
-  return File::get(resource_path() . '\views\Student_Form.html');
+	 
+	 return File::get(resource_path() . '\views\Student_Form.html');
 });
 Route::get('dropdowns/getBoards', 'DropdownController@Board');
 Route::post('dropdowns/getFields', 'DropdownController@Field');
+// });
+?>
