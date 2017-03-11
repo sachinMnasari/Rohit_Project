@@ -1,0 +1,323 @@
+{
+    "data": [{
+        "boardID": 1,
+        "boardName": "Maharashtra Board",
+        "fields": [{
+            "fieldID": 1,
+            "fieldName": "Secondary",
+            "classes": [{
+                "classID": 1,
+                "className": "8TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 2,
+                "className": "9TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 3,
+                "className": "10TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }]
+        }, {
+            "fieldID": 2,
+            "fieldName": "SCIENCE",
+            "classes": [{
+                "classID": 4,
+                "className": "FYJC(11TH)",
+                "subjects": [{
+                    "subjectID": 7,
+                    "subjectName": "PHYSICS"
+                }, {
+                    "subjectID": 8,
+                    "subjectName": "CHEMISTRY"
+                }, {
+                    "subjectID": 9,
+                    "subjectName": "MAaTHS"
+                }, {
+                    "subjectID": 10,
+                    "subjectName": "BIOLOGY"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }]
+
+            }, {
+                "classID": 5,
+                "className": "SYJC(12th)",
+                "subjects": [{
+                    "subjectID": 7,
+                    "subjectName": "PHYSICS"
+                }, {
+                    "subjectID": 8,
+                    "subjectName": "CHEMISTRY"
+                }, {
+                    "subjectID": 9,
+                    "subjectName": "MAaTHS"
+                }, {
+                    "subjectID": 10,
+                    "subjectName": "BIOLOGY"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }]
+
+            }]
+        }]
+    },{
+        "boardID": 2,
+        "boardName": "CBSE Board",
+        "fields": [{
+            "fieldID": 1,
+            "fieldName": "Secondary",
+            "classes": [{
+                "classID": 1,
+                "className": "8TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 2,
+                "className": "9TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 3,
+                "className": "10TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }]
+        }, {
+            "fieldID": 2,
+            "fieldName": "SCIENCE",
+            "classes": [{
+                "classID": 4,
+                "className": "FYJC(11TH)",
+                "subjects": [{
+                    "subjectID": 7,
+                    "subjectName": "PHYSICS"
+                }, {
+                    "subjectID": 8,
+                    "subjectName": "CHEMISTRY"
+                }, {
+                    "subjectID": 9,
+                    "subjectName": "MAaTHS"
+                }, {
+                    "subjectID": 10,
+                    "subjectName": "BIOLOGY"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }]
+
+            }, {
+                "classID": 5,
+                "className": "SYJC(12th)",
+                "subjects": [{
+                    "subjectID": 7,
+                    "subjectName": "PHYSICS"
+                }, {
+                    "subjectID": 8,
+                    "subjectName": "CHEMISTRY"
+                }, {
+                    "subjectID": 9,
+                    "subjectName": "MAaTHS"
+                }, {
+                    "subjectID": 10,
+                    "subjectName": "BIOLOGY"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }]
+
+            }]
+        }]
+    },{
+        "boardID": 3,
+        "boardName": "ICSE Board",
+        "fields": [{
+            "fieldID": 1,
+            "fieldName": "Secondary",
+            "classes": [{
+                "classID": 1,
+                "className": "8TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 2,
+                "className": "9TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }, {
+                "classID": 3,
+                "className": "10TH",
+                "subjects": [{
+                    "subjectID": 1,
+                    "subjectName": "MATHS"
+                }, {
+                    "subjectID": 2,
+                    "subjectName": "SCIENCE"
+                }, {
+                    "subjectID": 3,
+                    "subjectName": "SST"
+                }, {
+                    "subjectID": 4,
+                    "subjectName": "ENGLISH"
+                }, {
+                    "subjectID": 5,
+                    "subjectName": "HINDI"
+                }, {
+                    "subjectID": 6,
+                    "subjectName": "MARATHI"
+                }]
+
+            }]
+        }]
+    }]
+
+}
