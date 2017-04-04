@@ -18,10 +18,14 @@ Route::get('/getCsrf',function(){
 	return csrf_token();
 });
 Route::get('/', function() {
-	 
-	 return File::get(resource_path() . '\views\Student_Form.html');
+		 Blade::setContentTags('<%', '%>');        // for variables and all things Blade
+    	 Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
+
+	 return View("teacherForm");
+	 // return File::get(resource_path() . '\views\Student_Form.html');
 });
 Route::get('dropdowns/getBoards', 'DropdownController@Board');
 Route::post('dropdowns/getFields', 'DropdownController@Field');
+Route::post('/file/uploadfile', 'FielUploadController@uploadFile');
 // });
 ?>

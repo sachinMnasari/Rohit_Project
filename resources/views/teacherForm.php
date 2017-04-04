@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <link href="{{ URL::asset('bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{!! URL::asset(bootstrap-3.3.7-dist/css/bootstrap.min.css) !!}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-    <!-- <link href="/assets/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <script src="hrootttps://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <link href="../assets/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 </head>
 
 <body ng-app="teacherApp" ng-controller="TeacherFormCtrl as formCtrl">
@@ -15,12 +16,8 @@
         <div class="col-md-8">
             <form>
                 <div class="form-group col-md-6">
-                    <!-- <div class="col-md-3"> -->
                     <label for="firstname">First Name*</label>
-                    <!-- </div> -->
-                    <!-- <div class="col-md-6"> -->
                     <input class="form-control" type="text" id="firstname" placeholder="First Name" />
-                    <!-- </div> -->
                 </div>
                 <div class="form-group col-md-6">
                     <label for="lastname">Last Name*</label>
@@ -166,7 +163,7 @@
                         <div  id="file_name_box" class="form-control" >{{formCtrl.selectedFile}}
                         <span  ng-show="formCtrl.selectedFile" class="glyphicon glyphicon-remove" ng-click="formCtrl.removeFile()"></span></div>
                         <div class="input-group-btn">
-                            <button ng-show="formCtrl.selectedFile" class="btn btn-toolbar" ng-click="formCtrl.uploadFile()">
+                            <button ng-show="formCtrl.selectedFile" class="btn btn-toolbar" ng-click="formCtrl.clickFileUpload()">
                              Upload
                             </button>
                             <button class="btn btn-primary" ng-click="formCtrl.clickFileUpload()">
@@ -177,27 +174,17 @@
                 <div class="form-group">
                     <button class="btn btn-success">submit</button>
                 </div>
-                <div>
-                    <!-- <chips ng-model="formCtrl.subjects">
-                    <chip-tmpl>
-                        <div class="default-chip">
-                            {{chip}}
-                            <span class="glyphicon glyphicon-remove" remove-chip></span>
-                        </div>
-                    </chip-tmpl>
-                    <input ng-model-control ng-model="formCtrl.selctedCompany" uib-typeahead="company for company in formCtrls.availableCompanies | filter:$viewValue"></input>
-                </chips> -->
             </form>
             </div>
             <div class="col-md-2">
             </div>
+
         </div>
-        <script src="root/resources/assets/angularjs/angular.min.js"></script>
-        <!-- <script src="../js/teacherMain.js"></script> -->
-        <script src="/resources/assets/angular-chips/angular-chips.min.js"></script>
-        <script src="/resources/assets/angularboostrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
-        <script src="/resources/assets/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/dist/js/bootstrap-multiselect.js"></script>
-        <script src="/resources/AngularApp/Modules/teacherApp.js"></script>
+        <script src="../assets/angularjs/angular.min.js"></script>
+        <script src="../assets/angular-chips/angular-chips.min.js"></script>
+        <script src="../assets/angularboostrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+        <script src="../assets/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/dist/js/bootstrap-multiselect.js"></script>
+        <script src="../AngularApp/Modules/teacherApp.js"></script>
 </body>
 
 </html>
