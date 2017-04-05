@@ -56,5 +56,21 @@
    		mysqli_close($link);
    		return $result;
    }
+   function getAllComb(){
+         $link =  mysqli_connect('localhost:3306','root','root','rohit_tutorials'); 
+         if (!$link) { 
+         die('Could not connect to MySQL: ' . mysql_error()); 
+      } 
+         $result = $link -> query("SELECT  Board_id,Board_name,Field_Id,field_nm,class_id,class_name,Subject_Id,subject_name from subject_temp order by board_name,field_nm,class_name");
+         mysqli_close($link);
+         $rows1 = array();
+         if ($result->num_rows > 0) {
+       // output data of each row
+         while($row = $result->fetch_assoc()) {
+               $rows1[] =$row;
+         }
+    }  
+         return $rows1;
+   }
 }
 ?>

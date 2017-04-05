@@ -172,7 +172,13 @@ $(document).ready(function(){
               expanded = false;
           }else{
           $.ajax({
-          url : 'Controller/abcd.php?action=subject'+'&board='+board+'&field='+field+'&class1='+class1,
+            type : 'post',
+               headers: {
+                'X-CSRF-TOKEN': csrf_token,
+              },
+              url : 'dropdowns/getSubjects/',
+              data : { "board": board, "field":field,"class1":class1} ,
+          //url : 'Controller/abcd.php?action=subject'+'&board='+board+'&field='+field+'&class1='+class1,
             success : function(data){
               var json = JSON.parse(data);
               //$("#checkboxes").empty();
@@ -322,7 +328,13 @@ $(document).ready(function(){
         alert("Please fill the Board and field first");
         }else{
             $.ajax({
-              url : 'Controller/abcd.php?action=class'+'&board='+board+'&field='+field,
+               type : 'post',
+               headers: {
+                'X-CSRF-TOKEN': csrf_token,
+              },
+              url : 'dropdowns/getClass/',
+              data : { "board": board, "field":field} ,
+              //url : 'Controller/abcd.php?action=class'+'&board='+board+'&field='+field,
               success : function(data){
                 //alert(data);
                 //alert(document.getElementById('Class1').options.length)
