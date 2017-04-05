@@ -19,12 +19,18 @@ Route::get('/getCsrf',function(){
 });
 Route::get('/', function() {
 	 
-	 return File::get(resource_path() . '\views\Student_Form_1.html');
+	 //return File::get(resource_path() . '\views\Student_Form_1.html');
+		 Blade::setContentTags('<%', '%>');        // for variables and all things Blade
+    	 Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
+
+	 return View("teacherForm");
+	 // return File::get(resource_path() . '\views\Student_Form.html');
 });
 Route::get('dropdowns/getBoards', 'DropdownController@Board');
 Route::post('dropdowns/getFields', 'DropdownController@Field');
 Route::post('dropdowns/getClass', 'DropdownController@Class1');
 Route::post('dropdowns/getSubjects', 'DropdownController@Subject1');
 Route::get('dropdowns/getAllCombs', 'DropdownController@All_Comb');
+Route::post('/file/uploadfile', 'FielUploadController@uploadFile');
 // });
 ?>
