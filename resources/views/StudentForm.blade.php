@@ -6,7 +6,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
 </head>
 
-<body ng-app="teacherApp" ng-controller="TeacherFormCtrl as formCtrl">
+<body ng-app="StudentApp" ng-controller="StudentFormCtrl as formCtrl">
     
     <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-12">
@@ -68,7 +68,7 @@
                     <select class="form-control" ng-model="formCtrl.selectedBoard" ng-change="formCtrl.onChangeBoard()">
                         <option ng-value="0" ng-if="formCtrl.selectedBoard == 0" selected="selected">Select Board</option>
                         <option ng-value="option" ng-repeat="option in formCtrl.data">
-                            {{option.boardName}}
+                            {{option.Board_NM}}
                         </option>
                     </select>
                      </div>
@@ -76,8 +76,8 @@
                     <div class="col-md-8 col-sm-12 col-xs-12">
                     <select class="form-control" ng-model="formCtrl.selectedField" ng-change="formCtrl.onChangeField()">
                         <option ng-value="0" ng-if="formCtrl.selectedField == 0" selected="selected">Select Stream</option>
-                        <option ng-value="option" ng-repeat="option in formCtrl.selectedBoard.fields">
-                            {{option.fieldName}}
+                        <option ng-value="option" ng-repeat="option in formCtrl.selectedBoard.Fields">
+                            {{option.Field_NM}}
                         </option>
                     </select>
                     </div>
@@ -88,8 +88,8 @@
                      <div class="col-md-8 col-sm-12 col-xs-12">
                     <select class="form-control" ng-model="formCtrl.selectedClass" ng-change="formCtrl.onChangeClass()">
                         <option ng-value="0" ng-if="formCtrl.selectedClass == 0" selected="selected">Select Class</option>
-                        <option ng-value="option" ng-repeat="option in formCtrl.selectedField.classes">
-                            {{option.className}}
+                        <option ng-value="option" ng-repeat="option in formCtrl.selectedField.Classes">
+                            {{option.Class_nm}}
                         </option>
                     </select>
                     </div>
@@ -98,8 +98,8 @@
                     <div class="col-md-8 col-sm-12 col-xs-12 form-group">
                      <select id="dates-field2" class="form-control multiselect-ui  " ng-model="formCtrl.selectedSubject" multiple="multiple" ng-close="formCtrl.abcd()">
                         <!-- <option class ="col-md-12 col-sm-12 col-xs-12" ng-value="0" ng-if="formCtrl.selectedSubject == 0" selected="selected">Select Subject</option>   -->
-                         <option class ="col-md-12 col-sm-12 col-xs-12" ng-repeat="option in formCtrl.selectedClass.subjects" ng-value="option">
-                            {{option.subjectName}}
+                         <option class ="col-md-12 col-sm-12 col-xs-12" ng-repeat="option in formCtrl.selectedClass.Subjects" ng-value="option">
+                            {{option.Sub_Nm}}
                         </option> 
                         </select>
                         </div>
@@ -116,18 +116,9 @@
         </select>
     </div> -->
 <!-- </div> -->
-                
-                <div class="row"> 
-                    <center><button ng-click="formCtrl.addSubject()">Add</button></center>
-                </div>
-                <div>
-                    <div class="row" ng-repeat="subj in formCtrl.subjectsToTeach" style="border: thin solid black">
-                        <div class="col-md-4 col-sm-4 col-xs-4">{{subj.board.boardName}}</div>
-                        <!-- <div class="col-md-2 col-sm-2 col-xs-2">{{subj.field.fieldName}}</div> -->
-                        <div class="col-md-3 col-sm-3 col-xs-3">{{subj.class.className}}</div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">{{subj.subject.subjectName}}</div>
-                        <div class="col-md-2 col-sm-2 col-xs-2"><button ng-click="formCtrl.deleteSubject($index)">delete</button></div>
-                    </div>
+            <div class="form-group">
+                    <button class="btn btn-success">submit</button>
+            </div>
                 
             </form>
         </div>

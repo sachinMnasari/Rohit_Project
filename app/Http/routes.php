@@ -32,5 +32,10 @@ Route::post('dropdowns/getClass', 'DropdownController@Class1');
 Route::post('dropdowns/getSubjects', 'DropdownController@Subject1');
 Route::get('dropdowns/getAllCombs', 'DropdownController@All_Comb');
 Route::post('/file/uploadfile', 'FielUploadController@uploadFile');
+Route::get('/Student', function() {
+	Blade::setContentTags('<%', '%>');        
+    Blade::setEscapedContentTags('<%%', '%%>');   
+	return View("StudentForm");
+});
 // });
 ?>
